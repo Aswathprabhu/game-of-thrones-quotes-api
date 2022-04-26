@@ -12,27 +12,27 @@ app.all('*', function(req, res, next) {
     next();
 });
 
-app.get('/v1/random/:num?', function(req, res) {
+app.get('/api/random/:num?', function(req, res) {
     res.send(quotesRepository.getRandom(req.params.num || 1));
 });
 
-app.get('/v1/author/:name/:num?', function(req, res) {
+app.get('/api/author/:name/:num?', function(req, res) {
     res.send(quotesRepository.getByAuthor(req.params.name, req.params.num || 1));
 });
 
-app.get('/v1/houses', function(req, res) {
+app.get('/api/houses', function(req, res) {
     res.send(quotesRepository.getHouses(null));
 });
 
-app.get('/v1/house/:name', function(req, res) {
+app.get('/api/house/:name', function(req, res) {
     res.send(quotesRepository.getHouses(req.params.name));
 });
 
-app.get('/v1/characters', function(req, res) {
+app.get('/api/characters', function(req, res) {
     res.send(quotesRepository.getCharacters(null));
 });
 
-app.get('/v1/character/:name', function(req, res) {
+app.get('/api/character/:name', function(req, res) {
     res.send(quotesRepository.getCharacters(req.params.name));
 });
 
